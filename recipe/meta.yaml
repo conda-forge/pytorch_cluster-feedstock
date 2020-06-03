@@ -57,14 +57,14 @@ outputs:
         - torch_cluster
     about:
       home: https://github.com/rusty1s/pytorch_cluster
-      summary: PyTorch Extension Library of Optimized Graph Cluster Algorithms
+      summary: PyTorch Extension Library of Optimized Graph Cluster Algorithms.
       license: MIT
       license_file: LICENSE
       dev_url: https://github.com/rusty1s/pytorch_cluster
 
 about:
   home: https://github.com/rusty1s/pytorch_cluster
-  summary: PyTorch Extension Library of Optimized Graph Cluster Algorithms
+  summary: PyTorch Extension Library of Optimized Graph Cluster Algorithms.
   license: MIT
   license_file: LICENSE
   dev_url: https://github.com/rusty1s/pytorch_cluster
