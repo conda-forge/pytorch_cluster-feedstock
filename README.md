@@ -7,7 +7,7 @@ Package license: MIT
 
 Feedstock license: BSD 3-Clause
 
-Summary: PyTorch Extension Library of Optimized Graph Cluster Algorithms
+Summary: PyTorch Extension Library of Optimized Graph Cluster Algorithms.
 
 
 
