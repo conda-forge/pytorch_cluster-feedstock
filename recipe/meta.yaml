@@ -1,8 +1,8 @@
 {% set name = "torch_cluster" %}
 {% set version = "1.5.4" %}
 
-{% set pytorch_cluster_proc_type = "cpu" if cuda_compiler_version == "None" else "gpu" %}  # [linux or win]
-{% set pytorch_cluster_proc_type = "cpu" %}                                                # [osx]
+{% set pytorch_cluster_proc_type = "cpu" if cuda_compiler_version == "None" else "gpu" %}  # [linux64]
+{% set pytorch_cluster_proc_type = "cpu" %}                                                # [not linux64]
 
 package:
   name: py{{ name|lower }}
@@ -13,8 +13,8 @@ source:
   sha256: 000f217e6bb2ef89e2403b27fe7c4b2c1f7fbacf781790b194f712b46d648a0c
 
 build:
-  number: 1
-  skip: true  # [win or py37]
+  number: 2
+  skip: true  # [win]
 
 outputs:
   # A meta-package to select CPU or GPU pytorch_cluster build.
@@ -30,30 +30,29 @@ outputs:
   - name: pytorch_cluster
     version: {{ version }}
     build:
-      number: 1
+      number: 2
       script: python -m pip install . -vv
     requirements:
       build:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
-        - {{ compiler('cuda') }}  # [linux and cuda_compiler_version != "None"]
+        - {{ compiler('cuda') }}  # [linux64 and cuda_compiler_version != "None"]
       host:
         - python
-        - pytorch >=1.4
+        - pytorch
         - setuptools
         - pytest-runner
         - scipy
         - pip
       run:
         - python
-        - pytorch >=1.4
+        - pytorch
         - scipy
+        - pytest
+        - pytest-cov
       run_constrained:
         - pytorch_cluster_proc * {{ pytorch_cluster_proc_type }}
     test:
-      requires:
-        - pytest
-        - pytest-cov
       imports:
         - torch_cluster
     about:
