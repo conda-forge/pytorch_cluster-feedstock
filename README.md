@@ -5,7 +5,7 @@ Home: https://github.com/rusty1s/pytorch_cluster
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: PyTorch Extension Library of Optimized Graph Cluster Algorithms
 
