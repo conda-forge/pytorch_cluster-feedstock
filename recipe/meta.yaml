@@ -29,7 +29,6 @@ requirements:
     - pytorch-cpu  # [osx or cuda_compiler_version in (undefined, 'None')]
     - setuptools
     - pytest-runner
-    - scipy
   run:
     - python
     - pytorch
@@ -41,6 +40,8 @@ requirements:
 test:
   imports:
     - torch_cluster
+  requires:
+    - scipy
 
 about:
   home: https://github.com/rusty1s/pytorch_cluster
