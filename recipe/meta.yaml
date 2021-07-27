@@ -25,9 +25,10 @@ requirements:
     - {{ compiler('cuda') }}  # [linux64 and cuda_compiler_version != "None"]
   host:
     - python
+    - pip
+    - pytest-runner
     # pytorch 1.8 is the latest supported version of conda-forge at build time
     - pytorch 1.8
-    - pip
   run:
     - python
     - {{ pin_compatible('pytorch', max_pin='x.x.x') }}
