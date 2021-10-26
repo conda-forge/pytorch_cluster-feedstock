@@ -1,5 +1,5 @@
 {% set name = "torch_cluster" %}
-{% set version = "1.5.4" %}
+{% set version = "1.5.9" %}
 
 package:
   name: py{{ name|lower }}
@@ -10,7 +10,7 @@ source:
   sha256: 000f217e6bb2ef89e2403b27fe7c4b2c1f7fbacf781790b194f712b46d648a0c
 
 build:
-  number: 3
+  number: 0
   skip: true  # [win or cuda_compiler_version == 'None' or cuda_compiler_version == '10.2']
   script:
     - export FORCE_CUDA="1"    # [linux64 and cuda_compiler_version != 'None']
