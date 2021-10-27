@@ -1,5 +1,5 @@
 {% set name = "torch_cluster" %}
-{% set version = "1.5.4" %}
+{% set version = "1.5.9" %}
 
 package:
   name: py{{ name|lower }}
