@@ -1,5 +1,5 @@
 {% set name = "torch_cluster" %}
-{% set version = "1.5.5" %}
+{% set version = "1.5.4" %}
 
 package:
   name: py{{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e9ef5d3a9376537275137f33df7d30bac7019311434dd2fa3124f53dda1e06ff
+  sha256: 000f217e6bb2ef89e2403b27fe7c4b2c1f7fbacf781790b194f712b46d648a0c
 
 build:
   number: 0
