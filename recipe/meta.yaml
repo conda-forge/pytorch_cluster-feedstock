@@ -26,6 +26,8 @@ requirements:
   host:
     - python
     - pytorch =>1.4.0
+    - pytorch-gpu    # [cuda_compiler_version != "None"]
+    - pytorch-cpu    # [cuda_compiler_version == "None"]
     - scipy
     - setuptools
     - pytest-runner
@@ -33,6 +35,8 @@ requirements:
   run:
     - python
     - pytorch =>1.4.0
+    - pytorch-gpu    # [cuda_compiler_version != "None"]
+    - pytorch-cpu    # [cuda_compiler_version == "None"]
     - scipy
     - pytest
     - pytest-cov
