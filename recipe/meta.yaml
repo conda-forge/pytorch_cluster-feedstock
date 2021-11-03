@@ -54,6 +54,5 @@ about:
 
 extra:
   recipe-maintainers:
-    - rluria14
-    - oblute
-    - ndmaxar
+    - mxr-conda
+    - dsangillo
