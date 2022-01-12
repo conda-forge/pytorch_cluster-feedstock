@@ -1,5 +1,5 @@
 {% set name = "torch_cluster" %}
-{% set version = "1.5.4" %}
+{% set version = "1.5.9" %}
 
 package:
   name: py{{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 000f217e6bb2ef89e2403b27fe7c4b2c1f7fbacf781790b194f712b46d648a0c
+  sha256: 96209e9f3f073c8e7fe91fbf7dd2cdd8655622d14dfc95a7618b4893a658dca5
 
 build:
-  number: 3
+  number: 0
   skip: true  # [win or cuda_compiler_version == 'None' or cuda_compiler_version == '10.2']
   script:
     - export FORCE_CUDA="1"    # [linux64 and cuda_compiler_version != 'None']
@@ -25,14 +25,18 @@ requirements:
     - {{ compiler('cuda') }}  # [linux64 and cuda_compiler_version != "None"]
   host:
     - python
-    - pytorch
+    - pytorch =>1.4.0
+    - pytorch-gpu    # [cuda_compiler_version != "None"]
+    - pytorch-cpu    # [cuda_compiler_version == "None"]
     - scipy
     - setuptools
     - pytest-runner
     - pip
   run:
     - python
-    - pytorch
+    - pytorch =>1.4.0
+    - pytorch-gpu    # [cuda_compiler_version != "None"]
+    - pytorch-cpu    # [cuda_compiler_version == "None"]
     - scipy
     - pytest
     - pytest-cov
@@ -50,6 +54,5 @@ about:
 
 extra:
   recipe-maintainers:
-    - rluria14
-    - oblute
-    - ndmaxar
+    - mxr-conda
+    - dsangillo
