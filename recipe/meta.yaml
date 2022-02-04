@@ -29,14 +29,14 @@ requirements:
     - {{ compiler('cuda') }}  # [linux64 and cuda_compiler_version != "None"]
   host:
     - python
-    - pytorch {{ pytorch_version }} {{ torch_proc_type }}*
+    - pytorch {{ pytorch }} {{ torch_proc_type }}*
     - scipy
     - setuptools
     - pytest-runner
     - pip
   run:
     - python
-    - pytorch {{ pytorch_version }} {{ torch_proc_type }}*
+    - pytorch {{ pytorch }} {{ torch_proc_type }}*
     - scipy
     - pytest
     - pytest-cov
