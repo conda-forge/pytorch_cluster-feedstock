@@ -1,5 +1,5 @@
 {% set name = "torch_cluster" %}
-{% set version = "1.5.9" %}
+{% set version = "1.6.0" %}
 
 package:
   name: py{{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 96209e9f3f073c8e7fe91fbf7dd2cdd8655622d14dfc95a7618b4893a658dca5
+  sha256: 249c1bd8c33a887b22bf569a59d0868545804032123594dd8c76ba1885859c39
 
 build:
   number: 0
@@ -42,7 +42,7 @@ requirements:
     - scipy
     - pytest
     - pytest-cov
-    
+
 test:
   imports:
     - torch_cluster
