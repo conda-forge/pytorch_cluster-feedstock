@@ -43,7 +43,7 @@ requirements:
     - pytest
     - pytest-cov
   run_constrained:
-    - pytorch =*={{ torch_proc_type }}
+    - pytorch =*={{ torch_proc_type }}*
     
 test:
   imports:
