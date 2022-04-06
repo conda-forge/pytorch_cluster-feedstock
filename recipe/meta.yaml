@@ -31,8 +31,6 @@ requirements:
     - python
     - pytorch
     - pytorch =*={{ torch_proc_type }}*
-    # hmaarrfk 20220312: build 1 has the correct run exports
-    - pytorch >=1.10.2=*_1    # [pytorch == "1.10"]
     - scipy
     - setuptools
     - pytest-runner
