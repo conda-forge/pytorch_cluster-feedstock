@@ -1,5 +1,5 @@
 {% set name = "torch_cluster" %}
-{% set version = "1.5.9" %}
+{% set version = "1.6.0" %}
 # see github.com/conda-forge/conda-forge.github.io/issues/1059 for naming discussion
 {% set torch_proc_type = "cuda" if cuda_compiler_version != "None" else "cpu" %}
 
@@ -9,40 +9,46 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 96209e9f3f073c8e7fe91fbf7dd2cdd8655622d14dfc95a7618b4893a658dca5
+  sha256: 249c1bd8c33a887b22bf569a59d0868545804032123594dd8c76ba1885859c39
 
 build:
-  number: 2
-  skip: true  # [win or cuda_compiler_version == 'None' or cuda_compiler_version == '10.2']
-  script:
-    - export FORCE_CUDA="1"    # [linux64 and cuda_compiler_version != 'None']
-    - export CC="$GCC"   # [linux64 and cuda_compiler_version != 'None']
-    - export NVCC_FLAGS="--compiler-bindir=${CC}"    # [linux64 and cuda_compiler_version != 'None']
-    - {{ PYTHON }} -m pip install . -vv
+  number: 0
+  skip: true  # [win]
 
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - pytorch                                # [build_platform != target_platform]
+    - pytorch =*={{ torch_proc_type }}*      # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - {{ compiler('cuda') }}  # [linux64 and cuda_compiler_version != "None"]
+    - {{ compiler('cuda') }}  # [cuda_compiler_version not in (undefined, 'None')]
   host:
     - python
+    - pip
     - pytorch
     - pytorch =*={{ torch_proc_type }}*
-    - scipy
     - setuptools
     - pytest-runner
-    - pip
+    - scipy
   run:
     - python
     - scipy
     - pytest
     - pytest-cov
   run_constrained:
+    # 2022/02/05 hmaarrfk
+    # While conda packaging seems to allow us to specify
+    # constraints on the same package in different lines
+    # the resulting package doesn't have the ability to
+    # be specified in multiples lines
+    # This makes it tricky to use run_exports
+    # we add the GPU constraint in the run_constrained
+    # to allow us to have "two" constraints on the
+    # running package  
     - pytorch =*={{ torch_proc_type }}*
-    
+
 test:
   imports:
     - torch_cluster
@@ -58,3 +64,4 @@ extra:
   recipe-maintainers:
     - mxr-conda
     - dsangillo
+    - pstjohn
