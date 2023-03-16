@@ -1,11 +1,11 @@
-About pytorch_cluster
-=====================
+About pytorch_cluster-feedstock
+===============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pytorch_cluster-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/rusty1s/pytorch_cluster
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pytorch_cluster-feedstock/blob/main/LICENSE.txt)
 
 Summary: PyTorch Extension Library of Optimized Graph Cluster Algorithms
 
