@@ -36,7 +36,8 @@ requirements:
     - scipy
     - libcusparse-dev      # [(cuda_compiler_version or "").startswith("12")]
     - libcublas-dev        # [(cuda_compiler_version or "").startswith("12")]
-    - libcusolver-dev        # [(cuda_compiler_version or "").startswith("12")]
+    - libcusolver-dev      # [(cuda_compiler_version or "").startswith("12")]
+    - libcurand-dev        # [(cuda_compiler_version or "").startswith("12")]
 
   run:
     - python
