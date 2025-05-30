@@ -153,7 +153,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-pytorch_cluster-green.svg)](https://anaconda.org/conda-forge/pytorch_cluster) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pytorch_cluster.svg)](https://anaconda.org/conda-forge/pytorch_cluster) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pytorch_cluster.svg)](https://anaconda.org/conda-forge/pytorch_cluster) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pytorch_cluster.svg)](https://anaconda.org/conda-forge/pytorch_cluster) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pytorch__cluster-green.svg)](https://anaconda.org/conda-forge/pytorch_cluster) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pytorch_cluster.svg)](https://anaconda.org/conda-forge/pytorch_cluster) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pytorch_cluster.svg)](https://anaconda.org/conda-forge/pytorch_cluster) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pytorch_cluster.svg)](https://anaconda.org/conda-forge/pytorch_cluster) |
 
 Installing pytorch_cluster
 ==========================
