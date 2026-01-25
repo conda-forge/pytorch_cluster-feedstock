@@ -32,7 +32,6 @@ requirements:
     - setuptools
     - pytest-runner
     - scipy
-    - libxcrypt            # [linux and py<39]
     - libcusparse-dev      # [cuda_compiler_version != "None"]
     - libcublas-dev        # [cuda_compiler_version != "None"]
     - libcusolver-dev      # [cuda_compiler_version != "None"]
