@@ -32,10 +32,13 @@ requirements:
     - setuptools
     - pytest-runner
     - scipy
-    - libcusparse-dev      # [cuda_compiler_version != "None"]
-    - libcublas-dev        # [cuda_compiler_version != "None"]
-    - libcusolver-dev      # [cuda_compiler_version != "None"]
-    - libcurand-dev        # [cuda_compiler_version != "None"]
+    {% if cuda_compiler_version != "None" %}
+    - cuda-version {{ cuda_compiler_version }}
+    - libcublas-dev
+    - libcurand-dev
+    - libcusparse-dev
+    - libcusolver-dev
+    {% endif %}
 
   run:
     - python
