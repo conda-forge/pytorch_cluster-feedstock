@@ -6,14 +6,7 @@ set -euxo pipefail
 if [[ ${cuda_compiler_version} != "None" && "$target_platform" == linux-64 ]]; then
     export FORCE_CUDA="1"
     export CUDA_TOOLKIT_ROOT_DIR="${PREFIX}"
-    if [[ ${cuda_compiler_version} == 12.9 ]]; then
-        export TORCH_CUDA_ARCH_LIST="5.0;6.0;7.0;7.5;8.0;8.6;8.9;9.0;10.0;12.0+PTX"
-    elif [[ ${cuda_compiler_version} == 13.0 ]]; then
-        export TORCH_CUDA_ARCH_LIST="7.5;8.0;8.6;8.9;9.0;10.0;11.0;12.0+PTX"
-    else
-        echo "unsupported cuda version. edit build_pytorch.sh"
-        exit 1
-    fi
+    export TORCH_CUDA_ARCH_LIST="${CF_TORCH_CUDA_ARCH_LIST}"
     # create a compiler shim because build checks whether $CC exists,
     # so we cannot pass flags in that variable; cannot use regular
     # compiler activation because nvcc doesn't understand most of the
